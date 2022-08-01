@@ -137,6 +137,7 @@ If the comparison fails, set is_palindrome as False.
 for index in range(length_of_text):
     if solution.pop_character() != solution.dequeue_character():
         is_palindrome = False
+        break
         
 
 # finally print whether string text is palindrome or not.
