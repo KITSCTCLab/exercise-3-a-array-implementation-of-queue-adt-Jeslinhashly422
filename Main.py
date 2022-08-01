@@ -95,7 +95,10 @@ class Solution:
         Returns:
           The data that is popped out if the stack is not empty.
         """
-        # Write your code here
+        if not self.is_stack_empty():
+            data = self.stack.pop()
+            self.top -= 1
+            return data
 
     def dequeue_character(self):
         """
