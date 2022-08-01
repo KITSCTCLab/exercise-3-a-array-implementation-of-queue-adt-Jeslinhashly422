@@ -106,7 +106,10 @@ class Solution:
         Returns:
           The data that is dequeued if the queue is not empty.
         """
-        # Write your code here
+        if not self.is_queue_empty():
+            data = self.queue[self.front]
+            self.front += 1
+            return data
 
 
 # read the string text
@@ -120,7 +123,8 @@ solution = Solution(length_of_text)
 
 # push/enqueue all the characters of string text to stack
 for index in range(length_of_text):
-    # Write code here
+    solution.push_character(text[index])
+    solution.enqueue_character(text[index])
 
 is_palindrome = True
 '''
@@ -130,7 +134,10 @@ compare both characters
 If the comparison fails, set is_palindrome as False.
 '''
 # Write the necessary logic
-
+for index in range(length_of_text):
+    if solution.pop_character() != solution.dequeue_character():
+        is_palindrome = False
+        
 
 # finally print whether string text is palindrome or not.
 if is_palindrome:
